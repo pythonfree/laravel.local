@@ -22,8 +22,8 @@ class TestController
 
 
 
-
-
+        $data = Article::where('id', 1)->get();
+        $this->myDump($data);
 
 
 /*        $item = new Article();
