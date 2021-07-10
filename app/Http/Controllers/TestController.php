@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Article;
+use App\Models\Rubric;
 
 class TestController
 {
@@ -21,9 +22,57 @@ class TestController
     {
 
 
+        $data = Article::all();
 
-        $data = (new Article())->newQuery()->get();
-        $this->myDump($data);
+        $this->myDump($data[0]->rubrics);
+
+
+
+
+
+
+
+
+/*        $data = Rubric::all();
+
+
+        $this->myDump($data);*/
+
+
+
+
+
+
+
+
+
+
+/*        $data = (new Article())->newQuery()->get();
+
+        $data = $data->reject(function ($x) {
+            return is_null($x->created_at);
+        });*/
+
+
+
+
+
+
+
+
+
+
+
+
+//        foreach($data as $key => $val) {
+//            echo $val->title;
+//        }
+
+
+
+
+//        $data = Article::where('id', 1)->get();
+//        $this->myDump($data);
 
 
 /*        $item = new Article();
@@ -40,11 +89,11 @@ class TestController
         }*/
 
 
-        die;
+//        die;
 
 //        return 'Hello!';
-        return view('test', [
-            'names' => ['Vasya', 'Petya', 'Kate']
-        ]);
+//        return view('test', [
+//            'names' => ['Vasya', 'Petya', 'Kate']
+//        ]);
     }
 }
