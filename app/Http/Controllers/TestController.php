@@ -22,7 +22,7 @@ class TestController
 
 
 
-        $data = Article::where('id', 1)->get();
+        $data = (new Article())->newQuery()->get();
         $this->myDump($data);
 
 
