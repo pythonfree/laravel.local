@@ -23,8 +23,16 @@ class TestController
     public function index(HelloService $hello)
     {
 
+
+
+        \Debugbar::error('Error!');
+        return 'Hello!';
+
+
+
+
 //        $hello = app()->make(HelloService::class);
-        $this->myDump($hello->getMessage());
+//        $this->myDump($hello->getMessage());
 
 
 
