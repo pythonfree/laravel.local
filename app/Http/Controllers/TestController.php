@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Rubric;
+use App\Services\HelloService;
 
 class TestController
 {
@@ -15,16 +16,32 @@ class TestController
         echo '<pre>';
         var_dump($var);
         echo '</pre>';
+        die;
     }
 
 
-    public function index()
+    public function index(HelloService $hello)
     {
 
+//        $hello = app()->make(HelloService::class);
+        $this->myDump($hello->getMessage());
 
-        $data = Article::all();
 
-        $this->myDump($data[0]->rubrics);
+
+
+
+
+
+
+
+
+
+
+
+
+/*        $data = Article::all();
+
+        $this->myDump($data[0]->rubrics);*/
 
 
 
